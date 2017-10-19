@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>试题2</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        #box{
+            width:500px;
+            height:500px;
+/*            float:left;*/
+            margin-left: 500px;
+            overflow: hidden;
+            position:relative;
+            
+        }
+        #pic{
+            width:2500px;
+            height:500px;
+            background: red;
+            position:absolute;
+            top:0;
+            left:0;
+            
+            
+        }
+        #pic i{
+            display: block;
+            width:500px;
+            height:500px;
+            background: blue;
+            color:white;
+            font-size:30px;
+            text-align: center;
+            line-height: 500px;
+            float:left;
+            
+        }
+        #btn{
+            width:300px;
+            height:50px;
+            background: rgba(0,0,0,0.5);
+            position:absolute;
+            top:20px;
+            margin-left:100px;
+            border-radius:50px;
+        }
+        #btn strong{
+            width:50px;
+            height:50px;
+            border-radius:50px;
+            background: white;
+            float:left;
+            margin:0 5px;
+        }
+        #btn i:nth-child(1){
+            background: red;
+        }
+        
+
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="pic">
+            <i >1</i>
+            <i>2</i>
+            <i>3</i>
+            <i>4</i>
+            <i>5</i>
+        </div>
+        <div id="btn">
+            <strong >1</strong>
+            <strong >2</strong>
+            <strong >3</strong>
+            <strong>4</strong>
+            <strong>5</strong>
+        </div>
+    </div>
+</body>
+<script>
+    var pic = document.getElementById("pic");
+    var btn = document.getElementById("btn");
+    var z_i = document.getElementsByTagName("i");
+    var z_strong = document.getElementsByTagName("strong");
+    for(var i = 0;i <z_strong.length;i++){
+         z_strong[i].index = i;
+        z_strong[i] .onclick = function(){ 
+            pic.style.left = this.index * -500 + "px";
+
+            
+
+        }
+    }
+</script>
+
+</html>
